@@ -1,9 +1,13 @@
-import {Footer} from './Components/Footer'
+import { Footer } from "./Components/Footer";
+import Navbar from "./Components/Navbar/Navbar";
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
   return (
     <div>
-    <Footer/>
+      <Navbar />
+      <AllRoutes />
+      <Footer />
     </div>
   );
 }
