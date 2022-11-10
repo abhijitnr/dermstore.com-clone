@@ -42,7 +42,6 @@ app.get("/",async (req, res) => {
 
 app.post("/", async (req, res) => {
     let id = req.userId;
-    console.log(Cart, "ggg")
     try {
 
         let product = await Product.findById(req.body.product);
