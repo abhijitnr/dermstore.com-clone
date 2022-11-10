@@ -1,0 +1,100 @@
+/* Country page css start */
+
+/* For large screen */
+@media only screen and (min-width: 1008px) {
+  .navbar_country {
+    width: 100%;
+    height: 32px;
+    background-color: #f2f2f2;
+    position: fixed;
+    top: 0px;
+  }
+
+  .navbar_country_laguage {
+    width: 87%;
+    height: 99%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .country_flag {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 6px;
+    cursor: pointer;
+  }
+
+  .country_name {
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .space_separator {
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  .country_currency {
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+/* For medium screen */
+@media only screen and ((min-width: 641px) and (max-width: 1007px)) {
+  .navbar_country {
+    display: none;
+  }
+
+  .navbar_country_laguage {
+    display: none;
+  }
+
+  .country_flag {
+    display: none;
+  }
+
+  .country_name {
+    display: none;
+  }
+
+  .space_separator {
+    display: none;
+  }
+
+  .country_currency {
+    display: none;
+  }
+}
+
+/* For Small Screen */
+@media only screen and (max-width: 640px) {
+  .navbar_country {
+    display: none;
+  }
+
+  .navbar_country_laguage {
+    display: none;
+  }
+
+  .country_flag {
+    display: none;
+  }
+
+  .country_name {
+    display: none;
+  }
+
+  .space_separator {
+    display: none;
+  }
+
+  .country_currency {
+    display: none;
+  }
+}
+/* Country page css end */
