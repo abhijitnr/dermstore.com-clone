@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Login from "../Components/Login";
 import Register from "../Components/Register";
 
 function AllRoutes() {
@@ -11,7 +12,7 @@ function AllRoutes() {
       <Routes>
         <Route path="/" element={<h1>HOME</h1>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<h1>LOGIN</h1>} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<h1>CART</h1>} />
         <Route path="/brands" element={<h1>BRANDS</h1>} />
         <Route path="/holiday+by" element={<h1>HOLIDAY BY</h1>} />

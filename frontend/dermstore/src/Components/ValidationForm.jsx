@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormInputValidation } from "react-form-input-validation";
 import "../css/ValidationForm.css";
+import { useNavigate } from "react-router-dom";
 
 const ValidationForm = () => {
   const [fields, errors, form] = useFormInputValidation(
@@ -24,12 +25,17 @@ const ValidationForm = () => {
     }
   );
 
+  const navigate = useNavigate();
+
   const onSubmit = async (event) => {
     const isValid = await form.validate(event);
     if (isValid) {
       //   console.log(fields);
       // Perform api call here
       localStorage.setItem("signup", JSON.stringify(fields));
+      navigate("/login");
+    } else {
+      navigate("/register");
     }
   };
 
