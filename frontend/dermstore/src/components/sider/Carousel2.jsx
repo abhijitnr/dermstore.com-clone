@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 //import './Carousel.css'
 
 const Carousel2 = (props) => {
-    const {children, show, infiniteLoop} = props
+    const { children, show, infiniteLoop } = props
 
     const [currentIndex, setCurrentIndex] = useState(infiniteLoop ? show : 0)
     const [length, setLength] = useState(children.length)
-    
+
     const [isRepeating, setIsRepeating] = useState(infiniteLoop && children.length > show)
     const [transitionEnabled, setTransitionEnabled] = useState(true)
 
@@ -46,7 +46,7 @@ const Carousel2 = (props) => {
     const handleTouchMove = (e) => {
         const touchDown = touchPosition
 
-        if(touchDown === null) {
+        if (touchDown === null) {
             return
         }
 

@@ -1,33 +1,33 @@
 import React from 'react'
 import SiderTwocard from './sider/SiderTwocard'
 
-const FridaySale = ({data}) => {
+const FridaySale = ({ data }) => {
 
-    const sider={
-        img: {width:'100%'},
-        btn:{
-         backgroundColor: "white",
-     border: "2px solid black",
-     color: "black",
-     padding: "10px 20px",
-     textAlign: "center",
-     textDecoration: "none",
-     display: "inline-block",
-     fontSize: "14px",
-     width:"200px",
-     margin: "4px 2px",
-     cursor: "pointer",
-        },
-        para:{
-            fontSize:'12px'
-        },para1:{
-            fontSize:'19px'
-        }
-     }
+  const sider = {
+    img: { width: '100%' },
+    btn: {
+      backgroundColor: "white",
+      border: "2px solid black",
+      color: "black",
+      padding: "10px 20px",
+      textAlign: "center",
+      textDecoration: "none",
+      display: "inline-block",
+      fontSize: "14px",
+      width: "200px",
+      margin: "4px 2px",
+      cursor: "pointer",
+    },
+    para: {
+      fontSize: '12px'
+    }, para1: {
+      fontSize: '19px'
+    }
+  }
 
   return (
     <div className='friday'>
-        {/* <SiderTwocard
+      {/* <SiderTwocard
         img="https://static.thcdn.com/images/small/webp/widgets/208-us/10/Rewards_%281%29-070210.png"
          style={sider.img}
          para1={'Earn 250 Points, NOW'}
@@ -62,21 +62,21 @@ const FridaySale = ({data}) => {
         stylePara={sider.para}
 
         /> */}
-                {data.map((image, index) => (
-          <SiderTwocard
-            className="image"
-            img={image.url}
-            alt=""
-            btn={'Quick Buy'}
-            styleBtn={sider.btn}
-            style={sider.img}
+      {data.map((image, index) => (
+        <SiderTwocard
+          className="image"
+          img={image.url}
+          alt=""
+          btn={'Quick Buy'}
+          styleBtn={sider.btn}
+          style={sider.img}
 
-            key={index}
-           p={image.p1}
-           text={"EltaMD UV Luminous Broad"}
+          key={index}
+          p={image.p1}
+          text={"EltaMD UV Luminous Broad"}
 
-          />
-        ))}
+        />
+      ))}
     </div>
   )
 }
