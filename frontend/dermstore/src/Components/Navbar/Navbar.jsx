@@ -10,6 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 function Navbar() {
   const [anchorAccount, setAnchorAccount] = useState(null);
@@ -52,12 +53,7 @@ function Navbar() {
 
           <div className="main_navbar_search">
             <div className="search_input_icon">
-              <input
-                type="text"
-                className="seacrch_input"
-                placeholder="Search for a product or brand..."
-              />
-
+              <SearchBox></SearchBox>
               <SearchOutlinedIcon className="search_icon" />
             </div>
           </div>
