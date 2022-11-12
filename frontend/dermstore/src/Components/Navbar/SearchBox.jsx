@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "../../css/Navbar_css/search.css";
 import recomendNames from "./searchRecomendations.json";
 
@@ -13,7 +14,7 @@ let id;
 
 
 export default function SearchBox() {
-
+    const nv = useNavigate()
     const [results, setResults] = useState([]);
     const [suggetions, setSuggetions] = useState([]);
     const [active, setActive] = useState(0);
@@ -61,10 +62,12 @@ export default function SearchBox() {
                 </div>
                 {results.length > 1 && <div className='searchProducts'>
                     {
-                        results.map((e, i) => (<div className='productRes' key={i}>
-                            <img src={e.img} alt="" />
-                            <div>
-                                <p>
+                        results.map((e, i) => (<div 
+                        className='productRes' key={i}>
+                            <img
+                            src={e.img} alt="" />
+                            <div >
+                                <p >
                                     {
                                         e.name && e.name.split("").map((el, i) => (
                                             <span

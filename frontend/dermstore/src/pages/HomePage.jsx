@@ -114,7 +114,6 @@ const HomePage = () => {
 
   }, [])
 
-  console.log(data3);
 
   return (
     <div style={{ zIndex: "-10",marginTop: "180px" }}>

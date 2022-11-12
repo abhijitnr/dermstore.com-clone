@@ -8,7 +8,7 @@ import { Footer } from './Components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div id="app">
       <AppContextProvider>
         <Navbar></Navbar>
         <AllRoutes></AllRoutes>

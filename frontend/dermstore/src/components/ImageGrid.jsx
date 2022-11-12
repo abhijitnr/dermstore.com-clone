@@ -10,7 +10,6 @@ import Bestsellers from "./Bestsellers";
 
 const ImageGrid = () => {
     const { getAPI2,getAPI3,getAPI4,getAPI5,data2,data3,data4,data6 } = useContext(AuthContext);
-console.log("data",data3);
   const [imageClicked, setImageClicked] = useState({
     first: false,
     second: false,

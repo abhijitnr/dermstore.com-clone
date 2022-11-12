@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 //import { Carousel } from 'react-responsive-carousel';
 import axios from 'axios'
 import SiderTwocard from './SiderTwocard';
+import { Link, NavLink } from 'react-router-dom';
 
 const SliderTwo = ({ data }) => {
 
@@ -13,7 +14,6 @@ const SliderTwo = ({ data }) => {
 
     let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products")
     let data = response.data
-    console.log(data)
 
 
   }
@@ -69,10 +69,9 @@ const SliderTwo = ({ data }) => {
             btn={'Quick Buy'}
             styleBtn={sider.btn}
             style={sider.img}
-
-            key={index}
-            p={image.p1}
-            text={"EltaMD UV Luminous Broad"}
+            key = { index }
+            p = { image.p1 }
+            text = { "EltaMD UV Luminous Broad"}
 
           />
         ))}
