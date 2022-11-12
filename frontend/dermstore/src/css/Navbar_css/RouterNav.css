@@ -8,6 +8,7 @@
     background-color: #ffffff;
     border-bottom: 1px solid gray;
     position: fixed;
+    z-index: 1000;
     top: 113px; /* 32px + 81px */
   }
 
