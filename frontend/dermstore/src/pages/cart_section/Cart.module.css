@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.main{
+
+    border: 1px solid ;
+    width: 85rem;
+    height: auto;
+    margin: 5rem auto 0;
+    /* padding: 10px 20px; */
+}
+
+
+.btnDiv{
+    
+    /* font-size: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.btnDiv > h4{
+    font-size: 20px;
+}
+
+.items{
+    display: grid;
+   grid-template-columns: 2fr 1fr;
+    gap: 10px 5px;
+    margin-top: 40px;
+}
+
+.alert{
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.list{
+    /* width: 70%; */
+    min-height: 100px;
+    border: 1px solid;
+  border-top: 1px solid gray;
+}
+.offer{
+    /* width: 40%; */
+    min-height: 100px;
+    border: 1px solid;
+    background-color: #F2F2F2;
+    padding: 10px;
+}
+.giftSection{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.offerItems{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.offerItems > *{
+    margin-bottom: 10px;
+}
+.offerItems > div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+}
+.offerItems > div > img {
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+
+
+.table{
+    width: 100%;
+}
+.table tr{
+    border: 1px solid;
+}
+.table td{
+    border: 1px solid red;
+}
+
+.tbody td{
+
+justify-content: space-between;
+
+
+}
+.count{
+    justify-content: space-between;
+}
+.count button{
+    background-color: blue;
+    padding: 0px 5px;
+}
+
+.remove{ 
+    
+    justify-content: space-between;
+}
