@@ -6,7 +6,7 @@ function AppContextProvider({children}){
     const [data2, setData2] = useState([]);
     const [data3, setData3] = useState([]);
     const [data4, setData4] = useState([]);
-    //const [data5, setData5] = useState([]);
+    const [data5, setData5] = useState([]);
     const [data6, setData6] = useState([]);
 
 const getAPI2=async()=>{
