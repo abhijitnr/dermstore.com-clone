@@ -41,4 +41,18 @@
     text-decoration: underline;
   }
 }
+
+/* For Medium screen */
+@media only screen and ((min-width: 641px) and (max-width:1007px)) {
+  .router_nav_main {
+    display: none;
+  }
+}
+
+/* For Small Screen */
+@media only screen and (max-width: 640px) {
+  .router_nav_main {
+    display: none;
+  }
+}
 /* Router_Navbar css is start */
