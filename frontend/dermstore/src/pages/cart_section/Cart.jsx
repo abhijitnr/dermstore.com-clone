@@ -1,10 +1,20 @@
 import React from "react";
-import CartCSS from "./Cart.module.css";
-
+import CartCSS from './Cart.module.css'
+import { Box } from "@chakra-ui/react";
 import Checkoutbtn from "../../Components/cart_components/Checkoutbtn";
 import Bar from "../../Components/cart_components/Bar";
+import { BsStars } from "react-icons/bs";
+import CartItem from "../../Components/cart_components/CartItem";
+import ProductContext from "../../Context/ProductContext";
+import CartContext from "../../Context/CartContext";
+import { useContext } from "react";
+import Discount from "../../Components/cart_components/Discount";
 
+import GiftCard from "../../Components/cart_components/GiftCard";
 export function Cart() {
+  const { products } = useContext(ProductContext);
+  const { productPrice, cartValue } = useContext(CartContext);
+  // console.log(products);
   return (
     <>
       <div className={CartCSS.main}>
@@ -19,59 +29,14 @@ export function Cart() {
         <div className={CartCSS.items}>
           {/* List Section */}
           <div className={CartCSS.list}>
-            <table className={CartCSS.table}>
-              <thead className={CartCSS.thead}>
-                <tr>
-                  <th>items</th>
-                  <th>price</th>
-                  <th>count</th>
-                  <th>subtotal</th>
-                </tr>
-              </thead>
-              <tbody className={CartCSS.tbody}>
-                <tr>
-                  <td style={{ width: "50%" }}>
-                    <img
-                      src="https://static.thcdn.com//productimg/70/70/13169882-1944973340032844.jpg"
-                      alt=""
-                    />
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Veritatis sed quaerat nulla.
-                    </p>
-                  </td>
-                  <td style={{ width: "10%" }}>
-                    <p>$36</p>
-                  </td>
-                  <td
-                    className={CartCSS.count}
-                    // style={{ width: "20%", height: "100%" }}
-                  >
-                    <button>+</button>
-                    <div>3</div>
-                    <button>-</button>
-                  </td>
-                  <td
-                    className={CartCSS.remove}
-                    // style={{ width: "20%", height: "100%" }}
-                  >
-                    <p>108</p>
-                    <button>X</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            {products.map((data) => (
+              <CartItem data={data} />
+            ))}
           </div>
-
           {/* Offer Section */}
           <div className={CartCSS.offer}>
-            <div className={CartCSS.giftSection}>
-              <div>
-                <h2>Gift Section</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <span>^</span>
-            </div>
+            {/* giftcard */}
+            <GiftCard />
             <p>Qulification</p>
             <p>Lorem ipsum dolor sit.</p>
             <div className={CartCSS.offerItems}>
@@ -84,6 +49,23 @@ export function Cart() {
               </div>
             </div>
           </div>
+        </div>
+        <div style={{ width: "51.7%" }}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex" }}>
+              <BsStars />
+              <h4>Rewards members earn 720 points on this order</h4>{" "}
+            </div>
+            <div>
+              <p>
+                Cart Total: <span>{cartValue}</span>
+              </p>{" "}
+            </div>
+          </div>
+          {/* discount */}
+          <Box>
+            <Discount />
+          </Box>
         </div>
       </div>
     </>

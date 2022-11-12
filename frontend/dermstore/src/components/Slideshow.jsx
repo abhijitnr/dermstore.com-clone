@@ -1,8 +1,8 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-//import Carousel from '../Carousel/Carousel';
-//import Sidebox from './Sidebox';
+// import Carousel from '../Carousel/Carousel';
+// import Sidebox from './Sidebox';
 import "../css/style.css"
 import SideBox from './SideBox';
 

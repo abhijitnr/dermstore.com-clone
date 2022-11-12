@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import HomePage from "../pages/HomePage";
 
 function AllRoutes() {
   return (
@@ -10,7 +11,7 @@ function AllRoutes() {
     // }}
     >
       <Routes>
-        <Route path="/" element={<h1>HOME</h1>} />
+        <Route path="/" element={<HomePage></HomePage>} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<h1>CART</h1>} />

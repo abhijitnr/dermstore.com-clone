@@ -8,11 +8,13 @@
     background-color: #ffffff;
     position: fixed;
     top: 32px;
+    z-index: 10000;
   }
 
   .main_navbar_content {
     width: 87%;
     height: 99%;
+    z-index: 10000;
     margin: auto;
     display: flex;
     justify-content: center;
