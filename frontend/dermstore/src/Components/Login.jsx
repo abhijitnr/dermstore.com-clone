@@ -9,15 +9,6 @@ function Login() {
 
   const signupDataFromLs = JSON.parse(localStorage.getItem("signup"));
 
-  //   console.log(signupDataFromLs);
-
-  //   check_box: "";
-  //   confirm_email_address: "abc@gmail.com";
-  //   confirm_password: "123456";
-  //   email_address: "abc@gmail.com";
-  //   full_name: "Abhi";
-  //   password: "123456";
-  //   phone_number: "1234567890";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -25,6 +16,7 @@ function Login() {
       signupDataFromLs.email_address === email &&
       signupDataFromLs.password === password
     ) {
+      localStorage.setItem("token",signupDataFromLs.email_address);
       navigate("/");
     } else {
       alert("Credential doesn't match. Please fill correct details !");

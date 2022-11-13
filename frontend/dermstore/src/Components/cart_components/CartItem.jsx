@@ -12,7 +12,7 @@ function CartItem({ product, quantity }) {
 
   return (
     <>
-      <Flex fontSize={'1.2rem'} justify='space-between' align={'center'} px='0.3rem'>
+      <Flex fontSize={'1.2rem'} w={"90vw"} justify='space-between'  align={'center'} px='0.3rem' mt={"10px"} boxShadow={"1px 1px 10px black"} >
         <Box>
           <Image
             w={"50px"}

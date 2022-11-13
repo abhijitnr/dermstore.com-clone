@@ -12,7 +12,7 @@ const SiderTwocard = ({ img, style, text, btn, styleBtn, stylePara1, para1, styl
         <img src={img} alt="placeholder" style={style} />
         <p style={stylePara1}>{para1}</p>
         <p style={stylePara}>{text}</p>
-        <h3 >$ 56</h3>
+        <h3 >$ {(10+Math.random()*30).toFixed(2)}</h3>
         <button onClick={() => nv(`/cart/${id}`)} style={styleBtn}>{btn}</button>
       </div>
     </div>)

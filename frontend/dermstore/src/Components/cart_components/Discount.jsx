@@ -17,7 +17,7 @@ function Discount() {
   return (
     <Flex>
     <Input placeholder='Got a coupon code? Enter here.' value={coupon} type={"text"} onChange={(e) => setCoupon(e.target.value)} />
-    <Button onClick={onClick} >Add</Button>
+    <Button w={"100px"} onClick={onClick} >Add</Button>
     </Flex>
   )
 }

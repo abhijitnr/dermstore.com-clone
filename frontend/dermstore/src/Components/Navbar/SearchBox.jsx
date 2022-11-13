@@ -17,7 +17,7 @@ export default function SearchBox() {
     const nv = useNavigate()
     const [results, setResults] = useState([]);
     const [suggetions, setSuggetions] = useState([]);
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(false);
 
     const search = (val) =>
         axios.get(`https://wild-polo-shirt-calf.cyclic.app/products?q=${val}`)

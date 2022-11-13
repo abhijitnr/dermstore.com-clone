@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import axios from 'axios'
 export const AuthContext = React.createContext();
 
+let url = `https://wild-polo-shirt-calf.cyclic.app/products/`
+url = `http://localhost:3000/products`
+
 function AppContextProvider({ children }) {
   const [data2, setData2] = useState([]);
   const [data3, setData3] = useState([]);
@@ -11,42 +14,25 @@ function AppContextProvider({ children }) {
 
   const getAPI2 = async () => {
 
-    let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products/data2")
-    let data = response.data
-    //console.log(data)
-    setData2(data)
-    //return data
+    
   }
   const getAPI3 = async () => {
 
-    let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products/data3")
-    let data = response.data
-    //console.log(data)
-    setData3(data)
 
   }
   const getAPI4 = async () => {
 
-    let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products/data4")
-    let data = response.data
-    //console.log(data)
-    setData4(data)
+    
 
   }
   const getAPI5 = async () => {
 
-    let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products/data5")
-    let data = response.data
-    //console.log(data)
-    setData5(data)
+   
 
   }
   const getAPI6 = async () => {
 
-    let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products/data6")
-    let data = response.data
-    //console.log(data)
-    setData6(data)
+   
 
   }
 

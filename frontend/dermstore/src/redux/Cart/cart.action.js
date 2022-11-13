@@ -2,8 +2,8 @@ import axios from "axios";
 import { AddCart, CartDecQty, CartIncQty, GetCart, RmoveCart } from "./cart.actionType";
 
 
-let url = `https://wild-polo-shirt-calf.cyclic.app/carts`;
-// let url = `http://localhost:3000/carts`;
+// let url = `https://wild-polo-shirt-calf.cyclic.app/carts`;
+let url = `http://localhost:3000/carts`;
 
 export const getCarts = (token) => async (dispatch) => {
     axios.defaults.headers.common["token"] = token;
@@ -11,13 +11,15 @@ export const getCarts = (token) => async (dispatch) => {
     dispatch({ type: GetCart, payload: res.data })
 }
 
-export const addCart = (id, price, token) => async (dispatch) => {
+export const addCart = (product, token) => async (dispatch) => {
     axios.defaults.headers.common["token"] = token;
     let res = await axios.post(url, {
-        product: id,
-        price: price
+        product: product.id,
+        price: product.price,
+        quantity: 1
     });
-    dispatch({ type: AddCart, payload: { product: id, price: price, } })
+    console.log(res.data);
+    // dispatch({ type: AddCart, payload: { product: product, price: product.price, } })
 }
 
 export const removeCart = (id, token) => async (dispatch) => {

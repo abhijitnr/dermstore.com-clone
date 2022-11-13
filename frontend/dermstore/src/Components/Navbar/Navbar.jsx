@@ -11,6 +11,7 @@ import Fade from "@mui/material/Fade";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [anchorAccount, setAnchorAccount] = useState(null);
@@ -18,6 +19,10 @@ function Navbar() {
 
   // Dropdown Menu for Account
   const openAccount = Boolean(anchorAccount);
+
+  const obj = useSelector(store => store.cart);
+
+
   const handleClickAccount = (event) => {
     setAnchorAccount(event.currentTarget);
   };
@@ -109,7 +114,7 @@ function Navbar() {
               aria-expanded={openCart ? "true" : undefined}
               onClick={handleClickCart}
             >
-              <Badge badgeContent={1} color="primary" className="cart_icon">
+              <Badge badgeContent={obj.cartItems.length || 0} color="primary" className="cart_icon">
                 <ShoppingBagOutlinedIcon color="black" />
               </Badge>
               <p className="cart_name">Cart</p>
@@ -132,7 +137,7 @@ function Navbar() {
                   color: "black",
                 }}
               >
-                <MenuItem onClick={handleCloseCart}>VIEW CART</MenuItem>
+                <MenuItem onClick={handleCloseCart} disabled={obj.cartItems.length<1} >VIEW CART</MenuItem>
               </NavLink>
             </Menu>
           </div>

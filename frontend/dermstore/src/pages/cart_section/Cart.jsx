@@ -1,5 +1,5 @@
 import React from "react";
-import CartCSS from './Cart.module.css'
+import CartCSS from "./Cart.module.css";
 import { Box } from "@chakra-ui/react";
 import Checkoutbtn from "../../Components/cart_components/Checkoutbtn";
 import Bar from "../../Components/cart_components/Bar";
@@ -10,27 +10,28 @@ import { useDispatch, useSelector } from "react-redux";
 import GiftCard from "../../Components/cart_components/GiftCard";
 import { getCarts } from "../../redux/Cart/cart.action";
 
-
 export function Cart() {
-
   const dispatch = useDispatch();
-  const { cartItems, price } = useSelector(store => store.cart);
+  const { cartItems, price } = useSelector((store) => store.cart);
 
   React.useEffect(() => {
     dispatch(getCarts("g"));
-  }, [])
+  }, []);
   // console.log(cartItems)
 
   return (
     <>
-      <div className={CartCSS.main}>
+      <div
+        className={CartCSS.main}
+        style={{
+          marginLeft: "50px",
+        }}
+      >
         <div className={CartCSS.btnDiv}>
           <h4>Your Cart</h4>
           <Checkoutbtn />
         </div>
-        <div className={CartCSS.alert}>
-          {/* <Bar /> */}
-        </div>
+        <div className={CartCSS.alert}>{/* <Bar /> */}</div>
         {/* <div> <Bar props={'green'}/></div> */}
         <div className={CartCSS.items}>
           {/* List Section */}
@@ -40,12 +41,10 @@ export function Cart() {
             ))}
           </div>
           {/* Offer Section */}
-          <div className={CartCSS.offer}>
-            {/* giftcard */}
-            <GiftCard />
-            <p>Qulification</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <div className={CartCSS.offerItems}>
+          {/* <div className={CartCSS.offer}> */}
+          {/* giftcard */}
+          {/* <GiftCard /> */}
+          {/* <div className={CartCSS.offerItems}>
               <div>
                 <img
                   src="https://static.thcdn.com//productimg/70/70/13169882-1944973340032844.jpg"
@@ -53,10 +52,10 @@ export function Cart() {
                 />
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
-        <div style={{ width: "51.7%" }}>
+        <div style={{ width: "51.7%",margin:"auto",marginTop:"50px" }}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ display: "flex" }}>
               <BsStars />

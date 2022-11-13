@@ -3,6 +3,7 @@ import Login from "../Components/Login";
 import Register from "../Components/Register";
 import { Cart } from "../pages/cart_section/Cart";
 import HomePage from "../pages/HomePage";
+import Preview from "../pages/Preview";
 
 function AllRoutes() {
   return (
@@ -16,7 +17,7 @@ function AllRoutes() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart></Cart>} />
-        <Route path="/preview/:id" element={<h2>preview</h2>} />
+        <Route path="/preview/:id" element={<Preview></Preview>} />
         <Route path="/brands" element={<h1>BRANDS</h1>} />
         <Route path="/holiday+by" element={<h1>HOLIDAY BY</h1>} />
         <Route path="/browse+by" element={<h1>BROWSE BY</h1>} />
