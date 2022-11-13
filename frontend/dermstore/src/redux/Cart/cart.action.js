@@ -23,17 +23,17 @@ export const addCart = (id, price, token) => async (dispatch) => {
 export const removeCart = (id, price, token) => async (dispatch) => {
     axios.defaults.headers.common["token"] = token;
     let res = await axios.delete(url, { id: id });
-    dispatch({ type: RmoveCart, payload: { product: id, price: price, } })
+    dispatch({ type: RmoveCart, payload: { id: id, price: price, } })
 }
 
-export const cartIncQty = (id, price, token, qty) => async (dispatch) => {
-    axios.defaults.headers.common["token"] = token;
-    let res = await axios.patch(url, { id: id, quantity: qty + 1 });
+export const cartIncQty = (id, price,  qty,token) => async (dispatch) => {
+    // axios.defaults.headers.common["token"] = token;
+    // let res = await axios.patch(url, { id: id, quantity: qty + 1 });
     dispatch({ type: CartIncQty, payload: { id: id, price: price, } })
 }
 
-export const cartDecQty = (id, price, token, qty) => async (dispatch) => {
-    axios.defaults.headers.common["token"] = token;
-    let res = await axios.patch(url, { id: id, quantity: qty - 1 });
+export const cartDecQty = (id, price,qty, token) => async (dispatch) => {
+    // axios.defaults.headers.common["token"] = token;
+    // let res = await axios.patch(url, { id: id, quantity: qty - 1 });
     dispatch({ type: CartDecQty, payload: { id: id, price: price, } })
 }

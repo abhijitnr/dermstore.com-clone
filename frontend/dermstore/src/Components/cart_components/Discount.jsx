@@ -1,16 +1,12 @@
 import { Button, Flex, Input } from '@chakra-ui/react'
 import React from 'react'
 import { useState } from 'react'
-import { useContext } from 'react'
-import CartContext from '../../Context/CartContext'
 
 function Discount() {
     const [coupon, setCoupon] = useState('')
-    const {applyDiscount} = useContext(CartContext)
     const onClick = () => {
         const offerCode = "bikram123";
         if(coupon.toLowerCase() === offerCode) {
-            applyDiscount();
             setCoupon('')
         }else {
             window.alert("not a valid code");

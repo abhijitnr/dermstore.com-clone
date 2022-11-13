@@ -5,13 +5,13 @@ import { BsChevronUp } from "react-icons/bs";
 function GiftCard() {
   return (
     <Box className={CartCSS.giftSection} px='1rem' >
-              <div>
-                <h2>Gift Section</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <span>
-                <BsChevronUp size={22} style={{ fontWeight: "bolder" }} />
-              </span>
+      <div>
+        <h2>Gift Section</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <span>
+        <BsChevronUp size={22} style={{ fontWeight: "bolder" }} />
+      </span>
     </Box>
   )
 }

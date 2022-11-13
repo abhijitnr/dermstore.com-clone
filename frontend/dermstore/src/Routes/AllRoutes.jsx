@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
-import Cart from "../pages/Cart";
+import { Cart } from "../pages/cart_section/Cart";
 import HomePage from "../pages/HomePage";
 
 function AllRoutes() {

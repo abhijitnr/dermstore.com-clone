@@ -1,40 +1,32 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Flex, Spacer, Box, Image, Text } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import CartContext from '../../Context/CartContext';
-import ProductContext from '../../Context/ProductContext';
-export default function CountSection({getCount}) {
-    const [count, setCount] = useState(1);
-    const { setCartValue, cartPrices } = useContext(CartContext);
-    const {products} = useContext(ProductContext);
+import { useDispatch, useSelector } from 'react-redux';
+import { cartDecQty, cartIncQty } from "../../redux/Cart/cart.action";
 
-    //
-    const calculate = (val) => {
-      setCount((prev) => prev + val);
-    };
-    //
-    useEffect(() => {
-      getCount(count)
-      setCartValue((prev) => {
-        return (
-          cartPrices.reduce((previousVal, currentVal) => {
-            return previousVal + currentVal;
-          },0)
-        )
-      })
-    },[count, cartPrices])
 
-    //
+export default function CountSection({ id,price, quantity }) {
+  const [count, setCount] = useState(1);
+
+  //
+
+  //
+  const dispatch = useDispatch();
+
+  //
   return (
-    
+
     <Flex align={'center'} >
-    <AiOutlineMinus onClick={ () => (
-      count === 1 ? null : calculate(-1)
-    )}/>
-    <Text mx={'0.5rem'}>{count}</Text>
-    <AiOutlinePlus onClick={()=>{
-      calculate(1);
-      }}/>
+      <AiOutlineMinus
+        onClick={() => {
+          quantity>0 && dispatch(cartDecQty(id,price,quantity))
+        }}
+      />
+      <Text mx={'0.5rem'}>{quantity}</Text>
+      <AiOutlinePlus onClick={() => {
+        dispatch(cartIncQty(id,price,quantity))
+
+      }} />
     </Flex>
   )
 }

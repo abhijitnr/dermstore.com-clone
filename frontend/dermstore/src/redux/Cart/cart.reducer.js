@@ -12,30 +12,37 @@ export const cartReducer = (state = initState, { type, payload }) => {
         case GetCart:
             {
                 let price = 0;
-                payload.map((e, i) => price += (e.price * e.quantity))
+                console.log(payload)
+                payload.map((e, i) => price += ((e.product.price || 10) * e.quantity))
                 return { cartItems: payload, price: price }
             }
 
         case CartIncQty:
             {
-                return {
-                    cartItems: state.cartItems.map((e) => {
-                        if (e._id == payload.id)
-                            return { ...e, quantity: e.quantity + 1 }
-                        else return e;
-                    }),
-                    price: state.price + payload.price
-                }
+                let b = 0;
+                let c = state.cartItems.map((e, i) => {
+                    if (e.product.id == payload.id) {
+                        b = e.product.price || 10;
+                        return { ...e, quantity: e.quantity + 1 }
+                    } else
+                        return e;
+                })
+                let a = { cartItems: c, price: state.price + b }
+
+                return a;
             }
         case CartDecQty:
             {
+                let b = 0
                 return {
                     cartItems: state.cartItems.map((e) => {
-                        if (e._id == payload.id)
+                        if (e.product.id == payload.id) {
+                            b = e.product.price || 10;
                             return { ...e, quantity: e.quantity - 1 }
+                        }
                         else return e;
                     }),
-                    price: state.price - payload.price
+                    price: state.price - b
                 }
             }
 
@@ -46,9 +53,15 @@ export const cartReducer = (state = initState, { type, payload }) => {
             }
 
         case RmoveCart:
-            return {
-                price: state.price - payload.price,
-                cartItems: [...state.cartItems, payload.product]
+            {
+                let b = 0;
+                let a = [];
+                state.cartItems.map((e, i) => {
+                    if (e.product.id == payload.id) b = (e.product.price || 10) * e.quantity;
+                    else a.push(e);
+                })
+                console.log(state.price, b)
+                return { cartItems: a, price: (state.price - b) }
             }
 
 
