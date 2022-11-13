@@ -31,7 +31,7 @@ function CartItem({ product, quantity }) {
           <CountSection price={price} quantity={quantity} id={product.id} />
         </Box>
         <Box><Text>{price * quantity}</Text></Box>
-        <Box ><FaTimes onClick={() => { dispatch(removeCart(product.id,"")) }} /></Box>
+        <Box ><FaTimes onClick={() => { dispatch(removeCart(product.id,"g")) }} /></Box>
       </Flex>
     </>
   );

@@ -17,7 +17,7 @@ export function Cart() {
   const { cartItems, price } = useSelector(store => store.cart);
 
   React.useEffect(() => {
-    dispatch(getCarts());
+    dispatch(getCarts("g"));
   }, [])
   // console.log(cartItems)
 
