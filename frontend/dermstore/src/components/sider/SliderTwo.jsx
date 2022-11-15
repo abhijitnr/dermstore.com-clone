@@ -1,28 +1,20 @@
-import React from 'react'
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import Carousel from './Carousel';
-//import { Carousel } from 'react-responsive-carousel';
-import axios from 'axios'
-import SiderTwocard from './SiderTwocard';
-import { Link, NavLink } from 'react-router-dom';
+import React from "react";
+import Carousel from "./Carousel";
+import axios from "axios";
+import SiderTwocard from "./SiderTwocard";
 
 const SliderTwo = ({ data }) => {
-
-
-
   const getAPI = async () => {
-
-    let response = await axios.get("https://wild-polo-shirt-calf.cyclic.app/products")
-    let data = response.data
-
-
-  }
-
+    let response = await axios.get(
+      "https://wild-polo-shirt-calf.cyclic.app/products"
+    );
+    let data = response.data;
+  };
 
   //getAPI()
 
   const sider = {
-    img: { width: '150%', marginLeft: '-50px' },
+    img: { width: "150%", marginLeft: "-50px" },
     btn: {
       backgroundColor: "black",
       border: "none",
@@ -37,21 +29,16 @@ const SliderTwo = ({ data }) => {
       cursor: "pointer",
     },
     para: {
-      textAlign: 'center', fontSize: '14px', marginLeft: '40px', marginRight: '-70px'
-    }
-  }
-
+      textAlign: "center",
+      fontSize: "14px",
+      marginLeft: "40px",
+      marginRight: "-70px",
+    },
+  };
 
   return (
-
-    <div >
-      <Carousel
-        show={3}
-        infiniteLoop
-      >
-
-
-
+    <div>
+      <Carousel show={3} infiniteLoop>
         {/* <SiderTwocard
         img="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1586966591-20567.jpg?crop=1xw:1xh;center,top&resize=480:*"
         style={sider.img}
@@ -66,21 +53,17 @@ const SliderTwo = ({ data }) => {
             className="image"
             img={image.url}
             alt=""
-            btn={'Quick Buy'}
+            btn={"Quick Buy"}
             styleBtn={sider.btn}
             style={sider.img}
-            key = { index }
-            p = { image.p1 }
-            text = { "EltaMD UV Luminous Broad"}
-
+            key={index}
+            p={image.p1}
+            text={"EltaMD UV Luminous Broad"}
           />
         ))}
-
       </Carousel>
     </div>
+  );
+};
 
-
-  )
-}
-
-export default SliderTwo
+export default SliderTwo;
