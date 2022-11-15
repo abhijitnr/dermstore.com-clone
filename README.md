@@ -21,7 +21,7 @@
 
 ## About Dermstore website
 
-    Dermstore is US web store which sells cosmetics and skin care products. In 2021, it was acquired by THG plc from Target Corporation for £260.9m and migrated onto the company's Ingenuity e-commerce platform.
+Dermstore is US web store which sells cosmetics and skin care products. In 2021, it was acquired by THG plc from Target Corporation for £260.9m and migrated onto the company's Ingenuity e-commerce platform.
 
 ## Functionality implemented
 
